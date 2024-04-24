@@ -2,6 +2,7 @@
 
 - typstでレポート・論文を書くためのテンプレート
 - Template for writing report and papers in typst
+- 本当は branch を作成したかったが，issue が建てられないようなので（要調査）別レポジトリとした．
 
 # GitHub
 
