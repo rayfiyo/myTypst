@@ -1,6 +1,6 @@
 #import "./template.typ": *
 #show: master_thesis.with(
-  title: "Typstで書く修論のテンプレ", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", id: "12-345678", mentor: "魚 竿", mentor-post: "准教授", class: "修士", abstract_ja: [
+  title: "Typstで書く修論のテンプレ", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", id: "12-345678", mentor: "魚 竿", mentor-post: "准教授", class: "修士", member: "hoge男", abstract_ja: [
     近年の宇宙ってほんますごい. 近年の宇宙ってほんますごい.
     近年の宇宙ってほんますごい. 近年の宇宙ってほんますごい.
     近年の宇宙ってほんますごい. 近年の宇宙ってほんますごい.

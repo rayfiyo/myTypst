@@ -244,7 +244,7 @@
   // The paper`s author.
   author: "ここに著者が入る",
   // The author's information
-  university: "", school: "", department: "", id: "", mentor: "", mentor-post: "", class: "修士", date: (
+  university: "", school: "", department: "", id: "", mentor: "", mentor-post: "", class: "修士", member: "", date: (
     datetime.today().year(), datetime.today().month(), datetime.today().day(),
   ), paper-type: "論文",
   // Abstruct
@@ -396,6 +396,12 @@
     #if (mentor != "" or mentor-post != "") {
       text(size: 16pt)[
         指導教員: #mentor #mentor-post
+      ]
+    }
+
+    #if (member != "") {
+      text(size: 16pt)[
+        共同実験者: #member
       ]
     }
 
