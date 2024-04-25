@@ -246,7 +246,7 @@
   // The author's information
   university: "", school: "", department: "", id: "", mentor: "", mentor-post: "", class: "修士", member: "", date: (
     datetime.today().year(), datetime.today().month(), datetime.today().day(),
-  ), paper-type: "論文",
+  ),
   // Abstruct
   abstract_ja: [], abstract_en: [], keywords_ja: (), keywords_en: (),
   // The paper size to use.
@@ -380,7 +380,7 @@
     ]
 
     #text(size: 16pt)[
-      #class#paper-type
+      #class
     ]
 
     #v(40pt)
