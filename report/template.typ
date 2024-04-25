@@ -469,15 +469,8 @@
   } + empty_par() // 最初の段落のインデントを下げるためにダミーの段落を設置する
 
   // Start with a chapter outline.
-  toc()
   if enable_toc_of_image or enable_toc_of_table {
     pagebreak()
-  }
-  if enable_toc_of_image {
-    toc_image()
-  }
-  if enable_toc_of_table {
-    toc_table()
   }
 
   // Start main pages.
