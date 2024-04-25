@@ -421,7 +421,7 @@
   abstract_page(
     abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
   )
-  pagebreak()
+  //pagebreak()
 
   // Configure paragraph properties.
   set par(leading: 0.8em, first-line-indent: 20pt, justify: true)
@@ -444,7 +444,7 @@
   }
 
   show heading.where(level: 1): it => {
-    pagebreak()
+    //pagebreak()
     counter(math.equation).update(0)
     set text(weight: "medium", size: font_sizes.at("h1"))
     set block(spacing: 1.5em)
