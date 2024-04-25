@@ -297,7 +297,7 @@
     }
   }
 
-  // counting caption number
+  // counting caption
   show figure: it => {
     set align(center)
     if it.kind == "image" {
@@ -328,22 +328,17 @@
     }
   }
 
-  // Set the document's metadata.
-  set document(title: title, author: author)
+  // inline code の表示（小さなボックス）
+  show raw.where(block: false): box.with(
+    fill: luma(240), inset: (x: 3pt, y: 0pt), outset: (y: 3pt), radius: 2pt, font: ("UDEV Gothic", "Source Code Pro"),
+  )
 
-  // Set the body font. TeX Gyre Pagella is a free alternative
-  // to Palatino.
-  set text(font: (
-    "Nimbus Roman",
-    // "Hiragino Mincho ProN",
-    // "MS Mincho",
-    "Noto Serif CJK JP",
-  ), size: 12pt)
+  // block code の表示（大きなボックス，余白）
+  show raw.where(block: true): block.with(
+    fill: luma(240), inset: 10pt, radius: 4pt, width: 100%, font: ("UDEV Gothic", "Source Code Pro"),
+  )
 
-  // Configure the page properties.
-  set page(paper: paper-size, margin: (bottom: 1.75cm, top: 2.25cm))
-
-  // The first page.
+  // 表紙
   align(center)[
     #v(80pt)
     #text(size: 16pt)[
@@ -353,18 +348,23 @@
     #text(size: 16pt)[
       #class#paper-type
     ]
+
     #v(40pt)
-    #text(size: 22pt)[
+    #text(size: 22pt, weight: "bold")[
       #title
     ]
+
     #v(50pt)
     #text(size: 16pt)[
       #id #author
     ]
 
-    #text(size: 16pt)[
-      指導教員: #mentor #mentor-post
-    ]
+    #if (mentor != "" or mentor-post != "") {
+      text(size: 16pt)[
+        指導教員: #mentor #mentor-post
+      ]
+    }
+
     #v(40pt)
     #text(size: 16pt)[
       #date.at(0) 年 #date.at(1) 月 #date.at(2) 日 提出
@@ -384,45 +384,55 @@
   pagebreak()
 
   // Configure paragraph properties.
-  set par(leading: 0.78em, first-line-indent: 12pt, justify: true)
-  show par: set block(spacing: 0.78em)
+  set par(leading: 0.8em, first-line-indent: 20pt, justify: true)
+  show par: set block(spacing: 1.2em)
 
   // Configure chapter headings.
   set heading(numbering: (..nums) => {
-    nums.pos().map(str).join(".") + " "
+    if nums.pos().len() == 1 {
+      return [第 #nums.pos().map(str).join(".") 章]
+    } else {
+      return [#nums.pos().map(str).join(".") #h(0.5em)]
+    }
   })
+
+  let before_h1(it) = if it.numbering != none {
+    text()[
+      #numbering(it.numbering, ..counter(heading).at(it.location()))
+      #h(1em)
+    ]
+  }
+
   show heading.where(level: 1): it => {
     pagebreak()
     counter(math.equation).update(0)
-    set text(weight: "bold", size: 20pt)
+    set text(weight: "medium", size: font_sizes.at("h1"))
     set block(spacing: 1.5em)
-    let pre_chapt = if it.numbering != none {
-      text()[
-        #v(50pt)
-        第
-        #numbering(it.numbering, ..counter(heading).at(it.location()))
-        章
-      ]
-    } else { none }
     text()[
-      #pre_chapt \
-      #it.body \
-      #v(50pt)
+      #v(10pt)
+      #before_h1(it) #it.body
     ]
   }
-  show heading.where(level: 2): it => {
-    set text(weight: "bold", size: 16pt)
-    set block(above: 1.5em, below: 1.5em)
-    it
-  }
+
+  show heading.where(level: 2): it => block({
+    set text(weight: "medium", size: font_sizes.at("h2"))
+    text()[
+      #it
+    ]
+  })
+
+  show heading.where(level: 3): it => block({
+    set text(weight: "medium", size: font_sizes.at("h3"))
+    text()[
+      #it
+    ]
+  })
 
   show heading: it => {
-    set text(weight: "bold", size: 14pt)
-    set block(above: 1.5em, below: 1.5em)
+    set text(weight: "bold", size: font_sizes.at("under_h4"))
+    set block(above: 2em, below: 1.5em)
     it
-  } + empty_par()
-
-  // Start with a chapter outline.
+  } + empty_par() // 最初の段落のインデントを下げるためにダミーの段落を設置する
 
   // Start main pages.
   set page(footer: [
