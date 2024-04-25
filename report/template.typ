@@ -258,8 +258,7 @@
 ) = {
   // Set the document's metadata.
   set document(title: title, author: author)
-  // Set the body font. TeX Gyre Pagella is a free alternative
-  // to Palatino.
+  // Set the body font. TeX Gyre Pagella is a free alternative to Palatino.
   set text(
     font: ("Noto Serif CJK JP", "Times New Roman", "Source Han Serif JP"), size: font_sizes.at("normal"),
   )
