@@ -160,7 +160,7 @@
   if abstract_ja != [] {
     show <_ja_abstract_>: {
       align(center)[
-        #text(size: 20pt)[
+        #text(size: 20pt, weight: "bold")[
           概 #h(5pt) 要
         ]
       ]
@@ -174,7 +174,21 @@
     set par(leading: 0.8em, first-line-indent: 20pt, justify: true)
     show par: set block(spacing: 1.2em)
     abstract_ja
-  } else {
+    if keywords_ja != () {
+      par(
+        first-line-indent: 0em,
+      )[
+        #text(
+          font: ("Times New Roman", "Source Han Serif JP"), weight: "bold", size: 12pt,
+        )[
+          キーワード:
+          #keywords_ja.join(", ")
+        ]
+      ]
+    }
+    // pagebreak()
+  }
+  if abstract_en != [] {
     show <_en_abstract_>: {
       align(center)[
         #text(size: 18pt, "Abstruct")
@@ -191,6 +205,7 @@
         #keywords_en.join("; ")
       ]
     ]
+    // pagebreak()
   }
 }
 
@@ -208,10 +223,13 @@
 }
 
 // Definition of chapter outline
+// Delete outlines as they are not needed.
 
 // Definition of image outline
+// Delete outlines as they are not needed.
 
 // Definition of table outline
+// Delete outlines as they are not needed.
 
 // Setting empty par
 #let empty_par() = {
@@ -233,12 +251,31 @@
   abstract_ja: [], abstract_en: [], keywords_ja: (), keywords_en: (),
   // The paper size to use.
   paper-size: "a4",
-  // The path to a bibliography file if you want to cite some external
-  // works.
-  bibliography-file: none,
+  // The path to a bibliography file if you want to cite some external works.
+  bibliography-file: none, enable_toc_of_image: true, enable_toc_of_table: true,
   // The paper's content.
   body,
 ) = {
+  // Set the document's metadata.
+  set document(title: title, author: author)
+  // Set the body font. TeX Gyre Pagella is a free alternative
+  // to Palatino.
+  set text(
+    font: ("Noto Serif CJK JP", "Times New Roman", "Source Han Serif JP"), size: font_sizes.at("normal"),
+  )
+  show strong: set text(font: ("Noto Serif CJK JP", "Times New Roman", "IPAPGothic"))
+  // Set font size
+  show footnote.entry: set text(10pt)
+  show footnote: set text(15pt)
+  show math.equation: set text(font_sizes.at("math"))
+  set list(indent: 7pt)
+  set enum(indent: 7pt)
+
+  // Configure the page properties.
+  set page(
+    paper: paper-size, margin: (bottom: 1.75cm, top: 2.5cm, left: 2cm, right: 2cm),
+  )
+
   // citation number
   show ref: it => {
     if it.element != none and it.element.func() == figure {
@@ -328,17 +365,15 @@
     }
   }
 
-  // inline code の表示（小さなボックス）
+  // Display inline code (in a small box)
   show raw.where(block: false): box.with(
-    fill: luma(240), inset: (x: 3pt, y: 0pt), outset: (y: 3pt), radius: 2pt, font: ("UDEV Gothic", "Source Code Pro"),
+    fill: luma(240), inset: (x: 3pt, y: 0pt), outset: (y: 3pt), radius: 2pt,
   )
 
-  // block code の表示（大きなボックス，余白）
-  show raw.where(block: true): block.with(
-    fill: luma(240), inset: 10pt, radius: 4pt, width: 100%, font: ("UDEV Gothic", "Source Code Pro"),
-  )
+  // Display block code (in a larger block with more padding)
+  show raw.where(block: true): block.with(fill: luma(240), inset: 10pt, radius: 4pt, width: 100%)
 
-  // 表紙
+  // The first page.
   align(center)[
     #v(80pt)
     #text(size: 16pt)[
@@ -433,6 +468,18 @@
     set block(above: 2em, below: 1.5em)
     it
   } + empty_par() // 最初の段落のインデントを下げるためにダミーの段落を設置する
+
+  // Start with a chapter outline.
+  toc()
+  if enable_toc_of_image or enable_toc_of_table {
+    pagebreak()
+  }
+  if enable_toc_of_image {
+    toc_image()
+  }
+  if enable_toc_of_table {
+    toc_table()
+  }
 
   // Start main pages.
   set page(footer: [
