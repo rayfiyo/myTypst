@@ -444,7 +444,7 @@
   }
 
   show heading.where(level: 1): it => {
-    //pagebreak()
+    pagebreak()
     counter(math.equation).update(0)
     set text(weight: "medium", size: font_sizes.at("h1"))
     set block(spacing: 1.5em)
@@ -476,7 +476,7 @@
 
   // Start with a chapter outline.
   if enable_toc_of_image or enable_toc_of_table {
-    pagebreak()
+    //pagebreak()
   }
 
   // Start main pages.
