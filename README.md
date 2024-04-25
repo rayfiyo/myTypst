@@ -14,3 +14,21 @@
 - https://zenn.dev/monaqa/articles/2023-04-19-typst-introduction
 - https://zenn.dev/chantakan/articles/ed80950004d145
 - http://www-het.phys.sci.osaka-u.ac.jp/~yamaguch/j/typst.html
+
+# 追加
+
+```
+typst fonts
+```
+
+で，`Noto Serif CJK JP` と `Noto Sans CJK JP` がない場合は，以下が必要かも
+
+```
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji
+```
+
+また，Windows環境では以下も必要かも
+
+```
+typst --font-path /System/Library/Fonts watch hoge.typ
+```
