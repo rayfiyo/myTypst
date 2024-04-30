@@ -169,11 +169,12 @@
 
     v(10pt)
 
-    // Configure paragraph properties.
+    // Configure paragraph properties in abstract page.
     set text(size: 12pt)
-    set par(leading: 0.8em, first-line-indent: 20pt, justify: true)
+    set par(first-line-indent: 20pt, justify: true)
     show par: set block(spacing: 1.2em)
     abstract_ja
+
     if keywords_ja != () {
       par(
         first-line-indent: 0em,
@@ -236,6 +237,103 @@
   v(-1em)
   box()
 }
+
+// Setting header
+// ref: https://stackoverflow.com/questions/76363935/typst-header-that-changes-from-page-to-page-based-on-state
+#let custom_header() = locate(
+  loc => [
+    #let i = counter(page).at(loc).first()
+    #let ht-first = state("page-first-section", [])
+    #let ht-last = state("page-last-section", [])
+    // find first heading of level 1 on current page
+    #let first-heading = query(heading.where(level: 1), loc).find(h => h.location().page() == loc.page())
+    // find last heading of level 1 on current page
+    #let last-heading = query(heading.where(level: 1), loc).rev().find(h => h.location().page() == loc.page())
+    // don't show chapter numbering in header of bibliography page
+    #let header-chapt-num(content) = {
+      let bibliography-content = query(bibliography, loc).at(0)
+      if not content.at("body") == bibliography-content.at("title") {
+        return [
+          #numbering(content.numbering, ..counter(heading).at(content.location()))
+          #h(10pt)
+        ]
+      } else {
+        return none
+      }
+    }
+    // test if the find function returned none (i.e. no headings on this page)
+    #{
+      if first-heading != none {
+        ht-first.update([
+          // change style here if update needed section per section
+          #header-chapt-num(first-heading)
+          #first-heading.body
+        ])
+        ht-last.update([
+          // change style here if update needed section per section
+          #header-chapt-num(last-heading)
+          #last-heading.body
+        ])
+        // if one or more headings on the page, use first heading
+        // change style here if update needed page per page
+        [#ht-first.display() #h(1fr)]
+      } else {
+        // no headings on the page, use last heading from variable
+        // change style here if update needed page per page
+        [#ht-last.display() #h(1fr)]
+      }
+    }
+    #v(3pt, weak: true)
+    #line(length: 100%, stroke: 0.5pt + black)
+  ],
+)
+#let appendix(body) = {
+  counter(heading).update(0)
+  counter("appendix").update(1)
+  set heading(
+    numbering: (..nums) => {
+      let vals = nums.pos()
+      let value = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".at(vals.at(0) - 1)
+      if vals.len() == 1 {
+        return [付録 #value]
+      } else {
+        return [#(value + "." + nums.pos().slice(1).map(str).join(".")) #h(0.5em)]
+      }
+    },
+  );
+  set page(header: custom_header())
+  let before_h1(it) = if it.numbering != none {
+    text()[
+      #v(10pt)
+      #numbering(it.numbering, ..counter(heading).at(it.location()))
+    ]
+  } else {
+    none
+  }
+  show heading.where(level: 1): it => {
+    pagebreak()
+    counter(math.equation).update(0)
+    set text(
+      font: ("Times New Roman", "UDEV Gothic"), weight: "medium", size: font_sizes.at("h1"),
+    )
+    set block(spacing: 1.5em)
+    text()[
+      #before_h1(it) #h(0.5em) #it.body #v(0pt)
+    ]
+  }
+  show heading.where(level: 2): it => block(
+    {
+      set text(
+        font: ("Times New Roman", "UDEV Gothic"), weight: "medium", size: font_sizes.at("h2"),
+      )
+      text()[
+        #it
+      ]
+    },
+  )
+  [#body]
+}
+//
 
 // Construction of paper
 #let master_thesis(
@@ -333,7 +431,7 @@
     }
   }
 
-  // counting caption
+  // counting caption numbe
   show figure: it => {
     set align(center)
     if it.kind == "image" {
@@ -417,20 +515,21 @@
   ])
 
   counter(page).update(1)
+
   // Show abstruct
   abstract_page(
     abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
   )
-  //pagebreak()
 
-  // Configure paragraph properties.
-  set par(leading: 0.8em, first-line-indent: 20pt, justify: true)
-  show par: set block(spacing: 1.2em)
+  // Configure paragraph properties. 2
+  set par(first-line-indent: 12pt, justify: true)
 
   // Configure chapter headings.
   set heading(numbering: (..nums) => {
     if nums.pos().len() == 1 {
-      return [第 #nums.pos().map(str).join(".") 章]
+      // 章の表示形式（フォーマット）の設定
+      return [#nums.pos().map(str).join(".") ．]
+      // return [第 #nums.pos().map(str).join(".") 章]
     } else {
       return [#nums.pos().map(str).join(".") #h(0.5em)]
     }
@@ -439,18 +538,18 @@
   let before_h1(it) = if it.numbering != none {
     text()[
       #numbering(it.numbering, ..counter(heading).at(it.location()))
-      #h(1em)
     ]
   }
 
   show heading.where(level: 1): it => {
+    // 章毎に改ページをするなら次を利用
     pagebreak()
     counter(math.equation).update(0)
-    set text(weight: "medium", size: font_sizes.at("h1"))
+    set text(weight: "bold", size: font_sizes.at("h1"))
     set block(spacing: 1.5em)
     text()[
-      #v(10pt)
       #before_h1(it) #it.body
+      #v(-6pt)
     ]
   }
 
@@ -475,14 +574,10 @@
   } + empty_par() // 最初の段落のインデントを下げるためにダミーの段落を設置する
 
   // Start with a chapter outline.
-  if enable_toc_of_image or enable_toc_of_table {
-    //pagebreak()
-  }
+  if enable_toc_of_image or enable_toc_of_table {}
 
   // Start main pages.
-  set page(footer: [
-    #align(center)[#counter(page).display("1")]
-  ])
+  set page(footer: align(center)[#counter(page).display("1")])
 
   counter(page).update(1)
 
@@ -493,7 +588,7 @@
   // Display bibliography.
   if bibliography-file != none {
     show bibliography: set text(12pt)
-    bibliography(bibliography-file, title: "参考文献", style: "chicago-author-date")
+    bibliography(bibliography-file, title: "参考文献", style: "ieee")
   }
 }
 
