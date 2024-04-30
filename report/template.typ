@@ -510,6 +510,7 @@
     // #pagebreak()
   ]
 
+  // ローマ数字でのページ数（概要など）
   set page(footer: [
     #align(center)[#counter(page).display("i")]
   ])
@@ -578,6 +579,7 @@
   if enable_toc_of_image or enable_toc_of_table {}
 
   // Start main pages.
+  // アラビア数字でのページ数
   set page(footer: align(center)[#counter(page).display("1")])
 
   counter(page).update(1)
