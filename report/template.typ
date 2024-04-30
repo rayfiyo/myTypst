@@ -507,7 +507,7 @@
     #text(size: 16pt)[
       #date.at(0) 年 #date.at(1) 月 #date.at(2) 日 提出
     ]
-    #pagebreak()
+    // #pagebreak()
   ]
 
   set page(footer: [
@@ -548,8 +548,9 @@
     set text(weight: "bold", size: font_sizes.at("h1"))
     set block(spacing: 1.5em)
     text()[
-      #before_h1(it) #it.body
       #v(-6pt)
+      #linebreak(justify: true) // 明示的に改行
+      #before_h1(it) #it.body
     ]
   }
 
