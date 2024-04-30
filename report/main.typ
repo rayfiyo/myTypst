@@ -34,7 +34,7 @@ $ A = mat(1, 2;3, 4) $ <eq1>
 
 == 画像
 #img(
-  image("images/ladder.svg", width: 20%), caption: [オリジナルのThe Go gopher（Gopherくん）は、Renée
+  image("appendix/images/ladder.svg", width: 20%), caption: [オリジナルのThe Go gopher（Gopherくん）は、Renée
     Frenchによってデザインされました。],
 ) <img1>\
 @img1 を表示
