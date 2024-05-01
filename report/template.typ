@@ -1,7 +1,7 @@
 // Store theorem environment numbering
 
 // Set font sizes
-#let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, under_h4: 12pt, normal: 11pt, math: 12pt)
+#let font_sizes = (h1: 19pt, h2: 17pt, h3: 15pt, under_h4: 13pt, normal: 12pt, math: 13pt)
 
 // Store theorem environment numbering
 #let thmcounters = state("thm", ("counters": ("heading": ()), "latest": ()))
