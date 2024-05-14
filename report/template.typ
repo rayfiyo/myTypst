@@ -1,7 +1,7 @@
 // Store theorem environment numbering
 
 // Set font sizes
-#let font_sizes = (h1: 19pt, h2: 17pt, h3: 15pt, under_h4: 13pt, normal: 12pt, math: 13pt)
+#let font_sizes = (h1: 1pt, h2: 17pt, h3: 15pt, under_h4: 13pt, normal: 12pt, math: 13pt)
 
 // Store theorem environment numbering
 #let thmcounters = state("thm", ("counters": ("heading": ()), "latest": ()))
@@ -224,13 +224,13 @@
 }
 
 // Definition of chapter outline
-// Delete outlines as they are not needed.
+// Delete the outline as it is not needed.
 
 // Definition of image outline
-// Delete outlines as they are not needed.
+// Delete the outline as it is not needed.
 
 // Definition of table outline
-// Delete outlines as they are not needed.
+// Delete the outline as it is not needed.
 
 // Setting empty par
 #let empty_par() = {
