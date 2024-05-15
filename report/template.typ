@@ -1,7 +1,7 @@
 // Store theorem environment numbering
 
 // Set font sizes
-#let font_sizes = (h1: 1pt, h2: 17pt, h3: 15pt, under_h4: 13pt, normal: 12pt, math: 13pt)
+#let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, under_h4: 12pt, normal: 11pt, math: 12pt)
 
 // Store theorem environment numbering
 #let thmcounters = state("thm", ("counters": ("heading": ()), "latest": ()))
@@ -51,7 +51,7 @@
             if tc.slice(0, -1) == bc {
               counters.at(identifier) = (..bc, tc.last() + 1)
             } else {
-              counters.at(identifier) = (..bc, 1)
+              // counters.at(identifier) = (..bc, 1)
             }
           } else {
             // If we have no base counter, just count one level
@@ -471,8 +471,11 @@
   show raw.where(block: true): block.with(fill: luma(240), inset: 10pt, radius: 4pt, width: 100%)
 
   // The first page.
-  align(center)[
-    #v(80pt)
+  align(
+    // 縦の上揃え + 横の中央揃え
+    top + center,
+  )[
+    #v(40pt)
     #text(size: 16pt)[
       #university #school #department
     ]
@@ -507,7 +510,14 @@
     #text(size: 16pt)[
       #date.at(0) 年 #date.at(1) 月 #date.at(2) 日 提出
     ]
-    // #pagebreak()
+
+    // 概要を表紙に書く場合
+
+    // Show abstruct
+    #v(40pt)
+    #abstract_page(
+      abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
+    )
   ]
 
   // ローマ数字でのページ数（概要など）
@@ -517,10 +527,12 @@
 
   counter(page).update(1)
 
+  // 概要を表紙の次のページに書きたい場合は以下を有効化
+
   // Show abstruct
-  abstract_page(
-    abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
-  )
+  // abstract_page(
+  // abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
+  // )
 
   // Configure paragraph properties. 2
   set par(first-line-indent: 12pt, justify: true)
