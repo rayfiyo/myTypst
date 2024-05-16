@@ -36,9 +36,13 @@ $ A = mat(1, 2;3, 4) $ <eq1>
 @img1 を表示
 
 == 表
-#tbl(
-  table(columns: 4, [t], [1], [2], [3], [y], [0.3s], [0.4s], [0.8s]), caption: [テーブル @madje2022programmable],
-) <tbl1>
+#tbl(table(
+  columns: (7em, auto), // columns: 2, なども可
+  align: (left, left), //
+  [名称], [値], //
+  [A], [2], //
+  [B], [6], //
+), caption: [テーブル]) <tbl1>
 @tbl1 を表示
 
 == URL埋め込み
