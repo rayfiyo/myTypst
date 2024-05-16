@@ -475,7 +475,7 @@
     // 縦の上揃え + 横の中央揃え
     top + center,
   )[
-    #v(40pt)
+    #v(80pt)
     #text(size: 16pt)[
       #university #school #department
     ]
@@ -511,13 +511,13 @@
       #date.at(0) 年 #date.at(1) 月 #date.at(2) 日 提出
     ]
 
-    // 概要を表紙に書く場合
-
     // Show abstruct
-    #v(40pt)
-    #abstract_page(
-      abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
-    )
+    // #v(40pt)
+    // #abstract_page(
+    // abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
+    // )
+
+    #pagebreak()
   ]
 
   // ローマ数字でのページ数（概要など）
@@ -530,9 +530,9 @@
   // 概要を表紙の次のページに書きたい場合は以下を有効化
 
   // Show abstruct
-  // abstract_page(
-  // abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
-  // )
+  abstract_page(
+    abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
+  )
 
   // Configure paragraph properties. 2
   set par(first-line-indent: 12pt, justify: true)
