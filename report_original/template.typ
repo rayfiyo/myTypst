@@ -473,39 +473,48 @@
   // The first page.
   align(
     // 縦の上揃え + 横の中央揃え
-    top + left,
+    top + center,
   )[
-    // #pad( //
-    // bottom: 0.3cm, //
-    // left: 0.4cm, //
-    #box(
-      stroke: (bottom: none, top: 1.5pt, left: 1.5pt, right: 1.5pt), width: 3cm, height: 2cm, [
-        #align(horizon + center, [文字])
-      ],
-    )
-
-    #v(40pt)#text(size: 16pt)[
+    #text(size: 16pt)[
       #university #school #department
-    ]#text(size: 16pt)[
-      #class
-    ]#v(40pt)#text(size: 22pt, weight: "bold")[
+    ]
+
+    // #text(size: 16pt)[
+    // #class
+    // ]
+
+    #v(40pt)
+    #text(size: 22pt, weight: "bold")[
       #title
-    ]#v(50pt)#text(size: 16pt)[
+    ]
+
+    #v(50pt)
+    #text(size: 16pt)[
       #id #author
-    ]#if (mentor != "" or mentor-post != "") {
+    ]
+
+    #if (mentor != "" or mentor-post != "") {
       text(size: 16pt)[
         指導教員: #mentor #mentor-post
       ]
-    }#if (member != "") {
+    }
+
+    #if (member != "") {
       text(size: 16pt)[
         共同実験者: #member
       ]
-    }#v(40pt)#text(size: 16pt)[
+    }
+
+    #v(40pt)
+    #text(size: 16pt)[
       #date.at(0) 年 #date.at(1) 月 #date.at(2) 日 提出
     ]
+
     // 概要を表紙に書く場合
+
     // Show abstruct
-    #v(40pt)#abstract_page(
+    #v(40pt)
+    #abstract_page(
       abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
     )
   ]
