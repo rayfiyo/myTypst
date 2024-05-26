@@ -236,14 +236,14 @@
   ],
 )
 #let appendix(body) = {
-  counter(heading).update(0)
+  counter(heading).update(0) // 付録の添字リセット？
   counter("appendix").update(1)
   set heading(
     numbering: (..nums) => {
       let vals = nums.pos()
       let value = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".at(vals.at(0) - 1)
       if vals.len() == 1 {
-        return [付録 #value]
+        return [ #linebreak() 付録 #value ] // 明示的な改行含む
       } else {
         return [#(value + "." + nums.pos().slice(1).map(str).join(".")) #h(0.5em)]
       }
@@ -258,7 +258,6 @@
     none
   }
   show heading.where(level: 1): it => {
-    pagebreak()
     counter(math.equation).update(0)
     set text(size: font_sizes.at("h1"))
     set block(spacing: 1.5em)
