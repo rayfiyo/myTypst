@@ -24,6 +24,7 @@
 - https://zenn.dev/monaqa/articles/2023-04-19-typst-introduction
 - https://zenn.dev/chantakan/articles/ed80950004d145
 - http://www-het.phys.sci.osaka-u.ac.jp/~yamaguch/j/typst.html
+- https://qiita.com/gomazarashi/items/ddef3d0db22a9f1e08ba
 
 # note
 
