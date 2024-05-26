@@ -301,7 +301,6 @@
       }
     },
   );
-  set page(header: custom_header())
   let before_h1(it) = if it.numbering != none {
     text()[
       #v(10pt)
@@ -313,27 +312,20 @@
   show heading.where(level: 1): it => {
     pagebreak()
     counter(math.equation).update(0)
-    set text(
-      font: ("Times New Roman", "UDEV Gothic"), weight: "medium", size: font_sizes.at("h1"),
-    )
+    set text(size: font_sizes.at("h1"))
     set block(spacing: 1.5em)
     text()[
       #before_h1(it) #h(0.5em) #it.body #v(0pt)
     ]
   }
-  show heading.where(level: 2): it => block(
-    {
-      set text(
-        font: ("Times New Roman", "UDEV Gothic"), weight: "medium", size: font_sizes.at("h2"),
-      )
-      text()[
-        #it
-      ]
-    },
-  )
+  show heading.where(level: 2): it => block({
+    set text(size: font_sizes.at("h2"))
+    text()[
+      #it
+    ]
+  })
   [#body]
 }
-//
 
 // Construction of paper
 #let master_thesis(
