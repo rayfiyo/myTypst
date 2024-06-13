@@ -1,7 +1,5 @@
 #import "./template.typ": *
-#import "@preview/codelst:2.0.0": sourcecode
-#import "@preview/codelst:2.0.0": sourcefile
-
+#import "@preview/codelst:2.0.0": sourcecode, sourcefile, lineref, code-frame
 #show: master_thesis.with(bibliography-file: "references.bib")
 
 = メモ
