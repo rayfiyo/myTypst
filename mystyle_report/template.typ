@@ -335,8 +335,8 @@
   id: "12-34567", author: "ここに著者が入る",
   // The author's information
   university: "", school: "", department: "", mentor: "",
-  // The Experiment information
-  location: "", experiment_day: "", //
+  // The Experiment environment
+  room: "", exp_year: "", exp_month: "", exp_day: "", exp_day_of_week: "", //
   temperature: "", humidity: "", atmospheric_pressure: "", //
   member: [], //
   date: (
@@ -470,7 +470,7 @@
 
   // The first page.
   place(
-    horizon + left, dx: 3.2%, dy: 1.2%,
+    top + left, dx: 3.23%, dy: 2.16%,
   )[
     #set text(
       font: (
@@ -478,129 +478,160 @@
       ),
     )
     #rect(
-      width: 98.4%, height: 98.1%, stroke: 2.7pt, radius: 1pt,
+      width: 98.4%, height: 97.6%, stroke: (top: 2.8pt, bottom: 2.8pt, left: 2.7pt, right: 2.7pt), radius: 1.3pt,
     )[
       #place(
-        top, dx: -5pt, dy: -5pt, //
-        align(
+        dx: -5pt, dy: -5pt, align(
           horizon + center,
         )[
           #grid(
-            columns: (25.6%, 42.6%, 34%), //
+            columns: (25.54%, 42.55%, 34.1%), //
             rect(
-              width: 100%, height: 8%, stroke: (left: 0pt, rest: 1.6pt), radius: (top-left: 1pt),
+              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.4pt), radius: (top-left: 1pt),
             )[#text(size: 28pt)[ #number ]], //
             rect(
-              width: 100%, height: 8%, stroke: (left: 0pt, rest: 1.6pt),
-            )[#text(size: 24pt, weight: "black")[ 実 験 報 告 書 ]], //
+              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.4pt),
+            )[#text(size: 24pt, tracking: 8pt, weight: "black")[ 実験報告書 ]], //
             rect(
-              width: 100%, height: 8%, stroke: (left: 0pt, rest: 1.6pt),
+              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.4pt),
             )[ #university \ #school \ #department ], //
           )
         ],
       )
       #place(
-        top, dx: -5pt, dy: -5pt, //
-        [#rect(
-            width: 9.2%, height: 4%, stroke: 1.6pt,
-          )[#align(horizon + center)[#text(size: 12.4pt, tracking: 4pt)[ 分類 ]]]],
+        dx: -5pt, dy: -5pt, [#rect(
+            width: 9.15%, height: 4.08%, stroke: 1.4pt,
+          )[#align(horizon + center)[#text(size: 12.1pt, tracking: 4pt)[ 分類 ]]]],
+      )
+      #place(
+        dx: -5pt, dy: 51pt, [#rect(
+            width: 102%, height: 46.6%, stroke: (bottom: 1.4pt, rest: 0pt),
+          )[#place(
+              dx: 37.4pt,
+            )[
+              #grid(
+                rows: (
+                  11.56%, 5%, 11.238%, 4.99%, //
+                  4.6%, 5%, 2.08%, 5%, 3.9%, 5%, 3.94%, 5%,
+                  //
+                  4.7%, 5%, 4.8%, 5%, 5.8%, 5%,
+                ), //
+                [], //
+                [#place(dx: 7.5pt)[#text(tracking: 2.7pt)[題 目]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.1pt)[担当教員 #mentor] #place(dx: 232.8pt)[実験室 #room]], //
+                line(
+                  length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round", dash: (197.6pt, 28.1pt, 200pt)),
+                ), //
+                [#place(
+                    dx: 4.1pt,
+                  )[#text(
+                      )[実験年月日 令和 #exp_year 年 #exp_day 月 #exp_month 日 #exp_day_of_week 曜日 ]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                //
+                [#place(dx: 7.5pt)[#text()[天候]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.5pt)[#text()[共同実験者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.5pt)[#text()[メンバー１]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                //
+                [#place(dx: 7.5pt)[#text()[メンバー２]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.5pt)[#text()[提出年月日]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.5pt)[#text()[提出者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+              )
+            ]
+          ] ],
       )
       #place(top, dx: -5pt, dy: 53.9%, [
-        #line(length: 102%, stroke: 1.6pt)
-      ])
-      #place(top, dx: -5pt, dy: 53.9%, [
-        #rect(width: 9.2%, height: 4%, stroke: 1.6pt)[
-          #align(horizon + center)[#text(size: 12.4pt, tracking: 4pt)[ 概要 ]]
+        #rect(width: 9.2%, height: 4%, stroke: 1.4pt)[
+          #align(horizon + center)[#text(size: 12.1pt, tracking: 4pt)[ 概要 ]]
         ]
       ])
     ]
-  ]
+  ] /*
 
-  // ローマ数字でのページ数（概要など）
-  set page(footer: [
-    #align(center)[#counter(page).display("i")]
-  ])
+                                                          // ローマ数字でのページ数（概要など）
+                                                          set page(footer: [
+                                                            #align(center)[#counter(page).display("i")]
+                                                          ])
 
-  counter(page).update(1)
+                                                          counter(page).update(1)
 
-  // 概要を表紙の次のページに書きたい場合は以下を有効化
+                                                          // 概要を表紙の次のページに書きたい場合は以下を有効化
 
-  // Show abstruct
-  // abstract_page(
-  // abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
-  // )
+                                                          // Show abstruct
+                                                          // abstract_page(
+                                                          // abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
+                                                          // )
 
-  // Configure paragraph properties. 2
-  set par(first-line-indent: 12pt, justify: true)
+                                                          // Configure paragraph properties. 2
+                                                          set par(first-line-indent: 12pt, justify: true)
 
-  // Configure chapter headings.
-  set heading(numbering: (..nums) => {
-    if nums.pos().len() == 1 {
-      // 章の表示形式（フォーマット）の設定
-      return [#nums.pos().map(str).join(".") ．]
-      // return [第 #nums.pos().map(str).join(".") 章]
-    } else {
-      return [#nums.pos().map(str).join(".") #h(0.5em)]
-    }
-  })
+                                                          // Configure chapter headings.
+                                                          set heading(numbering: (..nums) => {
+                                                            if nums.pos().len() == 1 {
+                                                              // 章の表示形式（フォーマット）の設定
+                                                              return [#nums.pos().map(str).join(".") ．]
+                                                              // return [第 #nums.pos().map(str).join(".") 章]
+                                                            } else {
+                                                              return [#nums.pos().map(str).join(".") #h(0.5em)]
+                                                            }
+                                                          })
 
-  let before_h1(it) = if it.numbering != none {
-    text()[
-      #numbering(it.numbering, ..counter(heading).at(it.location()))
-    ]
-  }
+                                                          let before_h1(it) = if it.numbering != none {
+                                                            text()[
+                                                              #numbering(it.numbering, ..counter(heading).at(it.location()))
+                                                            ]
+                                                          }
 
-  show heading.where(level: 1): it => {
-    // 章毎に改ページをするなら次を利用
-    pagebreak()
-    counter(math.equation).update(0)
-    set text(weight: "bold", size: font_sizes.at("h1"))
-    set block(spacing: 1.5em)
-    text()[
-      #v(-6pt)
-      #linebreak(justify: true) // 明示的に改行
-      #before_h1(it) #it.body
-    ]
-  }
+                                                          show heading.where(level: 1): it => {
+                                                            // 章毎に改ページをするなら次を利用
+                                                            pagebreak()
+                                                            counter(math.equation).update(0)
+                                                            set text(weight: "bold", size: font_sizes.at("h1"))
+                                                            set block(spacing: 1.5em)
+                                                            text()[
+                                                              #v(-6pt)
+                                                              #linebreak(justify: true) // 明示的に改行
+                                                              #before_h1(it) #it.body
+                                                            ]
+                                                          }
 
-  show heading.where(level: 2): it => block({
-    set text(weight: "medium", size: font_sizes.at("h2"))
-    text()[
-      #it
-    ]
-  })
+                                                          show heading.where(level: 2): it => block({
+                                                            set text(weight: "medium", size: font_sizes.at("h2"))
+                                                            text()[
+                                                              #it
+                                                            ]
+                                                          })
 
-  show heading.where(level: 3): it => block({
-    set text(weight: "medium", size: font_sizes.at("h3"))
-    text()[
-      #it
-    ]
-  })
+                                                          show heading.where(level: 3): it => block({
+                                                            set text(weight: "medium", size: font_sizes.at("h3"))
+                                                            text()[
+                                                              #it
+                                                            ]
+                                                          })
 
-  show heading: it => {
-    set text(weight: "bold", size: font_sizes.at("under_h4"))
-    set block(above: 2em, below: 1.5em)
-    it
-  } + empty_par() // 最初の段落のインデントを下げるためにダミーの段落を設置する
+                                                          show heading: it => {
+                                                            set text(weight: "bold", size: font_sizes.at("under_h4"))
+                                                            set block(above: 2em, below: 1.5em)
+                                                            it
+                                                          } + empty_par() // 最初の段落のインデントを下げるためにダミーの段落を設置する
 
-  // Start with a chapter outline.
-  if enable_toc_of_image or enable_toc_of_table {}
+                                                          // Start with a chapter outline.
+                                                          if enable_toc_of_image or enable_toc_of_table {}
 
-  // Start main pages.
-  // アラビア数字でのページ数
-  set page(footer: align(center)[#counter(page).display("1")])
+                                                          // Start main pages.
+                                                          // アラビア数字でのページ数
+                                                          set page(footer: align(center)[#counter(page).display("1")])
 
-  counter(page).update(1)
+                                                          counter(page).update(1)
 
-  set math.equation(supplement: [式], numbering: equation_num)
+                                                          set math.equation(supplement: [式], numbering: equation_num)
 
-  body
+                                                          body
 
-  // Display bibliography.
-  if bibliography-file != none {
-    show bibliography: set text(12pt)
-    bibliography(bibliography-file, title: "参考文献", style: "ieee")
-  }
+                                                          // Display bibliography.
+                                                          if bibliography-file != none {
+                                                            show bibliography: set text(12pt)
+                                                            bibliography(bibliography-file, title: "参考文献", style: "ieee")
+                                                          }
+                                                            */
 }
 
 // LATEX character

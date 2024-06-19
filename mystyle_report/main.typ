@@ -1,8 +1,9 @@
 #import "./template.typ": *
 #import "@preview/codelst:2.0.0": sourcecode, sourcefile, lineref, code-frame
 #show: report.with(
-  number: "7", title: "Typstで書く修論のテンプレ", id: "12-34567", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", mentor: "魚 竿", location: "すごい実験室", //
-  experiment_day: "令和１年 ２月 ３日 月曜日", //
+  number: "7", title: "Typstで書く修論のテンプレ", id: "12-34567", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", mentor: "魚 竿", room: "すごい実験室", //
+  // Experiment environment
+  exp_year: "１", exp_month: "２", exp_day: "３", exp_day_of_week: "月", //
   temperature: "23", humidity: "70", atmospheric_pressure: "1024", //
   member: [hoge1, hoge2, hoge3], //
   abstract_ja: [
@@ -17,6 +18,8 @@
 // 近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙っ.この分の最後"．"でちょうど400文字になります．
 // ], bibliography-file: "references.bib",
 // )
+
+/*
 
 = 実験目的
 = 実験原理
@@ -96,3 +99,4 @@ $ A = mat(1, 2;3, 4) $ <eq1>
 #definition[
   Typst is a new markup-based typesetting system for the sciences.
 ] <definition>
+*/
