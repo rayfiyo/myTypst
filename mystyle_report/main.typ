@@ -1,11 +1,22 @@
 #import "./template.typ": *
 #import "@preview/codelst:2.0.0": sourcecode, sourcefile, lineref, code-frame
-#show: master_thesis.with(
-  title: "Typstで書く修論のテンプレ", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", id: "12-345678", mentor: "魚 竿", mentor-post: "准教授", class: "修士", member: "hoge男", abstract_ja: [
+#show: report.with(
+  number: "7", title: "Typstで書く修論のテンプレ", id: "12-34567", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", mentor: "魚 竿", location: "すごい実験室", //
+  experiment_day: "令和１年 ２月 ３日 月曜日", //
+  temperature: "23", humidity: "70", atmospheric_pressure: "1024", //
+  member: [hoge1, hoge2, hoge3], //
+  abstract_ja: [
     近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙っ．この分の最後"．"でちょうど200文字になります．
     近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙っ.この分の最後"．"でちょうど400文字になります．
   ], bibliography-file: "references.bib",
 )
+
+// #show: master_thesis.with(
+// title: "Typstで書く修論のテンプレ", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", id: "12-345678", mentor: "魚 竿", mentor-post: "准教授", class: "修士", member: "hoge男", abstract_ja: [
+// 近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙っ．この分の最後"．"でちょうど200文字になります．
+// 近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙ってほんますごい．近年の宇宙っ.この分の最後"．"でちょうど400文字になります．
+// ], bibliography-file: "references.bib",
+// )
 
 = 実験目的
 = 実験原理
@@ -20,13 +31,13 @@
 == コードブロック
 
 #sourcecode(numbers-start: 1)[```c
-    #include <stdio.h>
+      #include <stdio.h>
 
-    int main() {
-        printf("Hello, World!\n");
-        return 0;
-    }
-```]
+      int main() {
+          printf("Hello, World!\n");
+          return 0;
+      }
+  ```]
 
 // #sourcefile(read("ぱす"), file:"ファイル名")
 

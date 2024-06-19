@@ -327,17 +327,24 @@
 }
 
 // Construction of paper
-#let master_thesis(
+#let report(
+  number: "",
   // The master thesis title.
   title: "ここにtitleが入る",
   // The paper`s author.
-  author: "ここに著者が入る",
+  id: "12-34567", author: "ここに著者が入る",
   // The author's information
-  university: "", school: "", department: "", id: "", mentor: "", mentor-post: "", class: "修士", member: "", date: (
+  university: "", school: "", department: "", mentor: "",
+  // The Experiment information
+  location: "", experiment_day: "", //
+  temperature: "", humidity: "", atmospheric_pressure: "", //
+  member: [], //
+  date: (
     datetime.today().year(), datetime.today().month(), datetime.today().day(),
-  ),
+  ), //
   // Abstruct
-  abstract_ja: [], abstract_en: [], keywords_ja: (), keywords_en: (),
+  abstract_ja: [
+  ],
   // The paper size to use.
   paper-size: "a4",
   // The path to a bibliography file if you want to cite some external works.
@@ -462,52 +469,38 @@
   show raw.where(block: true): block.with(fill: luma(240), inset: 10pt, radius: 4pt, width: 100%)
 
   // The first page.
-  align(
-    // 縦の上揃え + 横の中央揃え
-    top + center,
+  place(
+    horizon + left, dx: 3.2%, dy: 1.2%,
   )[
-    #text(size: 16pt)[
-      #university #school #department
+    #rect(
+      width: 98.4%, height: 98.1%, stroke: 2.6pt, radius: 1pt,
+    )[
+      #place(
+        top, dx: -5pt, dy: -5pt, //
+        align(
+          horizon + center,
+        )[
+          #grid(
+            columns: (25.6%, 42.6%, 34%), //
+            rect(width: 100%, height: 8.4%, radius: (top-left: 1pt))[#number], //
+            rect(width: 100%, height: 8.4%)[#text(size: 24pt)[実 験 報 告 書]], //
+            rect(width: 100%, height: 8.4%)[#university \ #school \ #department], //
+          )
+        ],
+      )
+      #place(
+        top, dx: -5pt, dy: -5pt, //
+        [#rect(width: 9.1%, height: 4.2%)[#align(horizon + center)[ 分 類 ]]], //
+      )
+      #place(top, dx: -5pt, dy: 55.1%, [
+        #line(length: 102%, stroke: 1.6pt)
+      ])
+      #place(top, dx: -5pt, dy: 55.1%, [
+        #rect(width: 9.1%, height: 4.2%)[
+          #align(horizon + center)[ 概 要 ]
+        ]
+      ])
     ]
-
-    // #text(size: 16pt)[
-    // #class
-    // ]
-
-    #v(40pt)
-    #text(size: 22pt, weight: "bold")[
-      #title
-    ]
-
-    #v(50pt)
-    #text(size: 16pt)[
-      #id #author
-    ]
-
-    #if (mentor != "" or mentor-post != "") {
-      text(size: 16pt)[
-        指導教員: #mentor #mentor-post
-      ]
-    }
-
-    #if (member != "") {
-      text(size: 16pt)[
-        共同実験者: #member
-      ]
-    }
-
-    #v(40pt)
-    #text(size: 16pt)[
-      #date.at(0) 年 #date.at(1) 月 #date.at(2) 日 提出
-    ]
-
-    // 概要を表紙に書く場合
-
-    // Show abstruct
-    // #v(40pt)
-    // #abstract_page(
-    // abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
-    // )
   ]
 
   // ローマ数字でのページ数（概要など）
