@@ -511,9 +511,9 @@
             )[
               #grid(
                 rows: (
-                  11.56%, 5%, 11.238%, 4.99%, //
-                  4.6%, 5%, 2.08%, 5%, 3.9%, 5%, 3.94%, 5%,
+                  11.56%, 5%, 11.238%, 4.99%, 4.6%, 6.18%,
                   //
+                  1.9%, 5%, 3.9%, 5%, 3.94%, 5%, //
                   4.7%, 5%, 4.8%, 5%, 5.8%, 5%,
                 ), //
                 [], //
@@ -525,9 +525,13 @@
                 [#place(
                     dx: 4.1pt,
                   )[#text(
-                      )[実験年月日 令和 #exp_year 年 #exp_day 月 #exp_month 日 #exp_day_of_week 曜日 ]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                      )[ 実験年月日 令和 #exp_year 年 #exp_day 月 #exp_month 日 #exp_day_of_week 曜日 ]]], //
+                line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(
+                    dx: 11.9pt,
+                  )[#text(
+                      )[天候 温度 #temperature ℃ 湿度 #humidity % 気圧 #atmospheric_pressure hPa, ]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 //
-                [#place(dx: 7.5pt)[#text()[天候]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 [#place(dx: 7.5pt)[#text()[共同実験者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 [#place(dx: 7.5pt)[#text()[メンバー１]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 //
