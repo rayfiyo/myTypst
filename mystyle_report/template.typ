@@ -504,10 +504,10 @@
     // 概要を表紙に書く場合
 
     // Show abstruct
-    #v(40pt)
-    #abstract_page(
-      abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
-    )
+    // #v(40pt)
+    // #abstract_page(
+    // abstract_ja, abstract_en, keywords_ja: keywords_ja, keywords_en: keywords_en,
+    // )
   ]
 
   // ローマ数字でのページ数（概要など）
