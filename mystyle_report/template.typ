@@ -472,8 +472,13 @@
   place(
     horizon + left, dx: 3.2%, dy: 1.2%,
   )[
+    #set text(
+      font: (
+        "UD Digi Kyokasho N-R", "Noto Serif CJK JP", "Times New Roman", "IPAPGothic",
+      ),
+    )
     #rect(
-      width: 98.4%, height: 98.1%, stroke: 2.6pt, radius: 1pt,
+      width: 98.4%, height: 98.1%, stroke: 2.7pt, radius: 1pt,
     )[
       #place(
         top, dx: -5pt, dy: -5pt, //
@@ -482,22 +487,30 @@
         )[
           #grid(
             columns: (25.6%, 42.6%, 34%), //
-            rect(width: 100%, height: 8.4%, radius: (top-left: 1pt))[#number], //
-            rect(width: 100%, height: 8.4%)[#text(size: 24pt)[実 験 報 告 書]], //
-            rect(width: 100%, height: 8.4%)[#university \ #school \ #department], //
+            rect(
+              width: 100%, height: 8%, stroke: (left: 0pt, rest: 1.6pt), radius: (top-left: 1pt),
+            )[#text(size: 28pt)[ #number ]], //
+            rect(
+              width: 100%, height: 8%, stroke: (left: 0pt, rest: 1.6pt),
+            )[#text(size: 24pt, weight: "black")[ 実 験 報 告 書 ]], //
+            rect(
+              width: 100%, height: 8%, stroke: (left: 0pt, rest: 1.6pt),
+            )[ #university \ #school \ #department ], //
           )
         ],
       )
       #place(
         top, dx: -5pt, dy: -5pt, //
-        [#rect(width: 9.1%, height: 4.2%)[#align(horizon + center)[ 分 類 ]]], //
+        [#rect(
+            width: 9.2%, height: 4%, stroke: 1.6pt,
+          )[#align(horizon + center)[#text(size: 12.4pt, tracking: 4pt)[ 分類 ]]]],
       )
-      #place(top, dx: -5pt, dy: 55.1%, [
+      #place(top, dx: -5pt, dy: 53.9%, [
         #line(length: 102%, stroke: 1.6pt)
       ])
-      #place(top, dx: -5pt, dy: 55.1%, [
-        #rect(width: 9.1%, height: 4.2%)[
-          #align(horizon + center)[ 概 要 ]
+      #place(top, dx: -5pt, dy: 53.9%, [
+        #rect(width: 9.2%, height: 4%, stroke: 1.6pt)[
+          #align(horizon + center)[#text(size: 12.4pt, tracking: 4pt)[ 概要 ]]
         ]
       ])
     ]
