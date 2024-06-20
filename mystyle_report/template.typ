@@ -330,9 +330,9 @@
 #let cover(
   number: "",
   // The master thesis title.
-  title: "ここにtitleが入る",
+  title: "",
   // The paper`s author.
-  id: "12-34567", author: "ここに著者が入る",
+  id: "", author: "",
   // The author's information
   university: "", school: "", department: "", mentor: "",
   // The Experiment environment
@@ -542,7 +542,8 @@
                 [#place(
                     dx: 3.78pt,
                   )[#text()[提出年月日 #date.at(0) 年 #date.at(1) 月 #date.at(2) 日]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
-                [#place(dx: -11.2pt)[#text()[提出者]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
+                [#place(dx: 3.78pt)[#text()[提出者 #id #author]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
+                // [#place(dx: -11.2pt)[#text()[提出者 #id #author]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
               )
             ]
           ] ],
