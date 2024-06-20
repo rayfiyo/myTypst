@@ -337,7 +337,7 @@
   university: "", school: "", department: "", mentor: "",
   // The Experiment environment
   room: "", exp_year: "", exp_month: "", exp_day: "", exp_day_of_week: "", //
-  temperature: "", humidity: "", atmospheric_pressure: "", //
+  weather: "", temperature: "", humidity: "", atmospheric_pressure: "", //
   group: "", member1: "", member2: "", member3: "", member4: "", member5: "", member6: "", //
   date: (
     datetime.today().year(), datetime.today().month(), datetime.today().day(),
@@ -530,7 +530,7 @@
                 [#place(
                     dx: 11.9pt,
                   )[
-                    #place()[天候] #place(dx: 57.6pt)[温度 #temperature °Ｃ] #place(dx: 151.6pt)[湿度 #humidity ％] #place(dx: 246.23pt)[気圧 #atmospheric_pressure hPa]
+                    #place()[天候 #weather] #place(dx: 57.6pt)[温度 #temperature °Ｃ] #place(dx: 151.6pt)[湿度 #humidity ％] #place(dx: 246.23pt)[気圧 #atmospheric_pressure hPa]
                   ]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
                 [#place(dx: 7.6pt)[#text()[共同実験者 第 #group 班]]], line(length: 146.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
                 [#place(dx: 7.46pt)[#text()[#member1]]], line(
