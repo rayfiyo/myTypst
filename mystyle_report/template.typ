@@ -327,7 +327,7 @@
 }
 
 // Construction of paper
-#let report(
+#let cover(
   number: "",
   // The master thesis title.
   title: "ここにtitleが入る",

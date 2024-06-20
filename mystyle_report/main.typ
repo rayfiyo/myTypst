@@ -1,6 +1,6 @@
 #import "./template.typ": *
 #import "@preview/codelst:2.0.0": sourcecode, sourcefile, lineref, code-frame
-#show: report.with(
+#show: cover.with(
   number: "7", title: "Typstで書く修論のテンプレ", id: "12-34567", author: "右往 左往", university: "東京大学大学院", school: "工学系研究科", department: "航空宇宙工学専攻", mentor: "魚 竿", room: "すごい実験室", //
   // Experiment environment
   exp_year: "１", exp_month: "２", exp_day: "３", exp_day_of_week: "月", //
