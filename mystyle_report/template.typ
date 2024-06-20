@@ -511,13 +511,12 @@
             )[
               #grid(
                 rows: (
-                  11.56%, 5%, 11.238%, 4.99%, 4.6%, 6.18%,
-                  //
-                  1.9%, 5%, 3.9%, 5%, 3.94%, 5%, //
+                  11.56%, 5%, 11.238%, 4.99%, 4.6%, 6.18%, 1.9%, 5.3%, 4.6%, 4.4%, //
+                  4.0%, 5%, //
                   4.7%, 5%, 4.8%, 5%, 5.8%, 5%,
                 ), //
                 [], //
-                [#place(dx: 7.5pt)[#text(tracking: 2.7pt)[題 目]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.46pt)[#text(tracking: 2.7pt)[題 目]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 [#place(dx: 7.1pt)[担当教員 #mentor] #place(dx: 232.8pt)[実験室 #room]], //
                 line(
                   length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round", dash: (197.6pt, 28.1pt, 200pt)),
@@ -531,13 +530,12 @@
                     dx: 11.9pt,
                   )[#text(
                       )[天候 温度 #temperature ℃ 湿度 #humidity % 気圧 #atmospheric_pressure hPa, ]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.6pt)[#text()[共同実験者]]], line(length: 146.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.46pt)[#text()[メンバー１]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 //
-                [#place(dx: 7.5pt)[#text()[共同実験者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                [#place(dx: 7.5pt)[#text()[メンバー１]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                //
-                [#place(dx: 7.5pt)[#text()[メンバー２]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                [#place(dx: 7.5pt)[#text()[提出年月日]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                [#place(dx: 7.5pt)[#text()[提出者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.46pt)[#text()[メンバー２]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.46pt)[#text()[提出年月日]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.46pt)[#text()[提出者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
               )
             ]
           ] ],
