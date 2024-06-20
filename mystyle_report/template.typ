@@ -338,7 +338,7 @@
   // The Experiment environment
   room: "", exp_year: "", exp_month: "", exp_day: "", exp_day_of_week: "", //
   temperature: "", humidity: "", atmospheric_pressure: "", //
-  member: [], //
+  member1: "", member2: "", member3: "", member4: "", member5: "", member6: "", //
   date: (
     datetime.today().year(), datetime.today().month(), datetime.today().day(),
   ), //
