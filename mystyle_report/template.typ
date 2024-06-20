@@ -338,10 +338,12 @@
   // The Experiment environment
   room: "", exp_year: "", exp_month: "", exp_day: "", exp_day_of_week: "", //
   temperature: "", humidity: "", atmospheric_pressure: "", //
-  member1: "", member2: "", member3: "", member4: "", member5: "", member6: "", //
+  group: "", member1: "", member2: "", member3: "", member4: "", member5: "", member6: "", //
   date: (
     datetime.today().year(), datetime.today().month(), datetime.today().day(),
   ), //
+  purpose: [
+  ],
   // Abstruct
   abstract_ja: [
   ],
@@ -470,7 +472,7 @@
 
   // The first page.
   place(
-    top + left, dx: 3.23%, dy: 2.16%,
+    top + left, dx: 3.297%, dy: 2.156%,
   )[
     #set text(
       font: (
@@ -478,76 +480,104 @@
       ),
     )
     #rect(
-      width: 98.4%, height: 97.6%, stroke: (top: 2.8pt, bottom: 2.8pt, left: 2.7pt, right: 2.7pt), radius: 1.3pt,
+      width: 98.29%, height: 97.6%, stroke: 2.86pt, radius: 1.3pt,
     )[
       #place(
         dx: -5pt, dy: -5pt, align(
           horizon + center,
         )[
           #grid(
-            columns: (25.54%, 42.55%, 34.1%), //
+            columns: (25.511%, 42.586%, 34.1%), //
             rect(
-              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.4pt), radius: (top-left: 1pt),
+              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.56pt), radius: (top-left: 1pt),
             )[#text(size: 28pt)[ #number ]], //
             rect(
-              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.4pt),
+              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.56pt),
             )[#text(size: 24pt, tracking: 8pt, weight: "black")[ 実験報告書 ]], //
             rect(
-              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.4pt),
+              width: 100%, height: 8.12%, stroke: (left: 0pt, rest: 1.56pt),
             )[ #university \ #school \ #department ], //
           )
         ],
       )
       #place(
         dx: -5pt, dy: -5pt, [#rect(
-            width: 9.15%, height: 4.08%, stroke: 1.4pt,
+            width: 9.1%, height: 4.06%, stroke: 1.4pt,
           )[#align(horizon + center)[#text(size: 12.1pt, tracking: 4pt)[ 分類 ]]]],
       )
       #place(
-        dx: -5pt, dy: 51pt, [#rect(
+        dx: -5pt, dy: 52.1pt, [#rect(
             width: 102%, height: 46.6%, stroke: (bottom: 1.4pt, rest: 0pt),
           )[#place(
-              dx: 37.4pt,
+              dx: 37.29pt,
             )[
               #grid(
-                rows: (
-                  11.56%, 5%, 11.238%, 4.99%, 4.6%, 6.18%, 1.9%, 5.3%, 4.6%, 4.4%, //
-                  4.1%, 4.6%, //
-                  4.7%, 4.6%, 4.8%, 4.6%, 5.8%, 4.6%,
-                ), //
-                [], //
-                [#place(dx: 7.46pt)[#text(tracking: 2.7pt)[題 目]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                [#place(dx: 7.1pt)[担当教員 #mentor] #place(dx: 232.8pt)[実験室 #room]], //
+                rows: ( // TODO: % to pt
+                  11.51%, 5%, 11.23%, 4.956%, 4.78%, 6.007%, 1.9%, 5.3%, // ～天候
+                  4.7%, 5.0%, 4.1%, 4.88%, 4.7%, 5.2%, // 共同実験者
+                  4.6%, 4.6%, 13.5pt, 19.26pt, // 提出日～
+                ), [], // TODO: [#place to place
+                // TODO: 最初の dy: 0pt をちゃんとやる
+                [#place(dx: 7.29pt, dy: 0pt)[#text(tracking: 2.76pt)[題 目]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
+                [#place(dx: 7.29pt)[担当教員 #mentor] #place(dx: 232.679pt)[実験室 #room]], //
                 line(
-                  length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round", dash: (197.6pt, 28.1pt, 200pt)),
+                  length: 383.36pt, stroke: (thickness: 1.45pt, cap: "round", dash: (197.33pt, 28.26pt, 200pt)),
                 ), //
-                [#place(
-                    dx: 4.1pt,
-                  )[#text(
-                      )[ 実験年月日 令和 #exp_year 年 #exp_day 月 #exp_month 日 #exp_day_of_week 曜日 ]]], //
-                line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [
+                  #place(dx: 4.1pt)[実験年月日] #place(dx: 69.45pt)[令和 #exp_year 年] #place(dx: 208.67pt)[#exp_day 月] #place(dx: 252.3pt)[#exp_month 日] #place(dx: 296.09pt)[#exp_day_of_week 曜 ]
+                ], //
+                line(length: 335.43pt, stroke: (thickness: 1.45pt, cap: "round")), //
                 [#place(
                     dx: 11.9pt,
-                  )[#text(
-                      )[天候 温度 #temperature ℃ 湿度 #humidity % 気圧 #atmospheric_pressure hPa, ]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                [#place(dx: 7.6pt)[#text()[共同実験者]]], line(length: 146.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                  )[
+                    #place()[天候] #place(dx: 57.6pt)[温度 #temperature °Ｃ] #place(dx: 151.6pt)[湿度 #humidity ％] #place(dx: 246.23pt)[気圧 #atmospheric_pressure hPa]
+                  ]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
+                [#place(dx: 7.6pt)[#text()[共同実験者 第 #group 班]]], line(length: 146.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
                 [#place(dx: 7.46pt)[#text()[#member1]]], line(
-                  length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round", dash: (118.62pt, 14pt)),
+                  length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round", dash: (118.62pt, 14pt)),
                 ), //
                 [#place(dx: 7.46pt)[#text()[#member4]]], line(
-                  length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round", dash: (118.62pt, 14pt)),
+                  length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round", dash: (118.62pt, 14pt)),
                 ), //
-                [#place(dx: 7.46pt)[#text()[提出年月日]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                [#place(dx: 7.46pt)[#text()[提出者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(
+                    dx: 3.78pt,
+                  )[#text()[提出年月日 #date.at(0) 年 #date.at(1) 月 #date.at(2) 日]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
+                [#place(dx: -11.2pt)[#text()[提出者]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
               )
             ]
           ] ],
       )
-      #place(top, dx: -5pt, dy: 53.9%, [
+      #place(top, dx: -5pt, dy: 375.6pt, [
         #rect(width: 9.2%, height: 4%, stroke: 1.4pt)[
           #align(horizon + center)[#text(size: 12.1pt, tracking: 4pt)[ 概要 ]]
         ]
       ])
+      #place(
+        top, dx: 8.6pt, dy: 403.7pt, [
+          #rect(
+            width: 97%, height: 60%, stroke: 0pt,
+          )[
+            #grid(
+              columns: 100%, rows: (19.1pt, 8pt, 52.781pt, 15.4pt, 8pt), //
+              place(dx: 0pt, dy: 3.6pt)[#text()[実験の目的]], //
+              place(dx: -4.78pt)[
+                #line(length: 62pt, stroke: (thickness: 1.45pt, cap: "round"))
+              ], //
+              place(
+                dx: 3.78pt,
+              )[#text(font: ("Noto Serif CJK JP", "Times New Roman", "IPAPGothic"))[#purpose]],
+              //
+              place(dx: -3.9pt)[#text()[実験と結果の概要]], //
+              place(dx: -4.8pt)[
+                #line(length: 89pt, stroke: (thickness: 1.45pt, cap: "round"))
+              ], //
+              place(
+                dx: 3.78pt,
+              )[#text(font: ("Noto Serif CJK JP", "Times New Roman", "IPAPGothic"))[#purpose]],
+            )
+          ]
+        ],
+      )
     ]
   ] /*
 
