@@ -512,8 +512,8 @@
               #grid(
                 rows: (
                   11.56%, 5%, 11.238%, 4.99%, 4.6%, 6.18%, 1.9%, 5.3%, 4.6%, 4.4%, //
-                  4.0%, 5%, //
-                  4.7%, 5%, 4.8%, 5%, 5.8%, 5%,
+                  4.1%, 4.6%, //
+                  4.7%, 4.6%, 4.8%, 4.6%, 5.8%, 4.6%,
                 ), //
                 [], //
                 [#place(dx: 7.46pt)[#text(tracking: 2.7pt)[題 目]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
@@ -531,9 +531,12 @@
                   )[#text(
                       )[天候 温度 #temperature ℃ 湿度 #humidity % 気圧 #atmospheric_pressure hPa, ]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 [#place(dx: 7.6pt)[#text()[共同実験者]]], line(length: 146.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                [#place(dx: 7.46pt)[#text()[メンバー１]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
-                //
-                [#place(dx: 7.46pt)[#text()[メンバー２]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
+                [#place(dx: 7.46pt)[#text()[#member1]]], line(
+                  length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round", dash: (118.62pt, 14pt)),
+                ), //
+                [#place(dx: 7.46pt)[#text()[#member4]]], line(
+                  length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round", dash: (118.62pt, 14pt)),
+                ), //
                 [#place(dx: 7.46pt)[#text()[提出年月日]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
                 [#place(dx: 7.46pt)[#text()[提出者]]], line(length: 383.8pt, stroke: (thickness: 1.4pt, cap: "round")), //
               )
