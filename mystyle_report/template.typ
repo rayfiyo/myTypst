@@ -518,13 +518,14 @@
                   4.6%, 4.6%, 13.5pt, 19.26pt, // 提出日～
                 ), [], // TODO: [#place to place
                 // TODO: 最初の dy: 0pt をちゃんとやる
-                [#place(dx: 7.29pt, dy: 0pt)[#text(tracking: 2.76pt)[題 目]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
+                [#place(dx: 7.29pt, dy: 0pt)[#text(tracking: 2.76pt)[題 目 #title]]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
                 [#place(dx: 7.29pt)[担当教員 #mentor] #place(dx: 232.679pt)[実験室 #room]], //
                 line(
                   length: 383.36pt, stroke: (thickness: 1.45pt, cap: "round", dash: (197.33pt, 28.26pt, 200pt)),
                 ), //
                 [
-                  #place(dx: 4.1pt)[実験年月日] #place(dx: 69.45pt)[令和 #exp_year 年] #place(dx: 208.67pt)[#exp_day 月] #place(dx: 252.3pt)[#exp_month 日] #place(dx: 296.09pt)[#exp_day_of_week 曜 ]
+                  #place(dx: 4.1pt)[実験年月日] #place(dx: 69.45pt)[令和 #exp_year 年] #place(dx: 168.67pt)[#exp_day 月] #place(dx: 252.3pt)[#exp_month 日] #place(dx: 296.09pt)[#exp_day_of_week 曜 ]
+                  // #place(dx: 4.1pt)[実験年月日] #place(dx: 69.45pt)[令和 #exp_year 年] #place(dx: 208.67pt)[#exp_day 月] #place(dx: 252.3pt)[#exp_month 日] #place(dx: 296.09pt)[#exp_day_of_week 曜 ]
                 ], //
                 line(length: 335.43pt, stroke: (thickness: 1.45pt, cap: "round")), //
                 [#place(
@@ -532,11 +533,13 @@
                   )[
                     #place()[天候 #weather] #place(dx: 57.6pt)[温度 #temperature °Ｃ] #place(dx: 151.6pt)[湿度 #humidity ％] #place(dx: 246.23pt)[気圧 #atmospheric_pressure hPa]
                   ]], line(length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
-                [#place(dx: 7.6pt)[#text()[共同実験者 第 #group 班]]], line(length: 146.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
-                [#place(dx: 7.46pt)[#text()[#member1]]], line(
+                [#place(dx: 7.6pt)[共同実験者 第 #group 班]], line(length: 146.8pt, stroke: (thickness: 1.45pt, cap: "round")), //
+                [#place(dx: 7.46pt)[#member1] #place(dx: 139.46pt)[#member2] #place(dx: 269.46pt)[#member3]], //
+                line(
                   length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round", dash: (118.62pt, 14pt)),
                 ), //
-                [#place(dx: 7.46pt)[#text()[#member4]]], line(
+                [#place(dx: 7.46pt)[#member4] #place(dx: 139.46pt)[#member5] #place(dx: 269.46pt)[#member6]], //
+                line(
                   length: 383.8pt, stroke: (thickness: 1.45pt, cap: "round", dash: (118.62pt, 14pt)),
                 ), //
                 [#place(
