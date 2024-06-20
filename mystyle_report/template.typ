@@ -566,7 +566,9 @@
               ], //
               place(
                 dx: 3.78pt,
-              )[#text(font: ("Noto Serif CJK JP", "Times New Roman", "IPAPGothic"))[#purpose]],
+              )[#text(
+                  size: 10pt, font: ("Noto Serif CJK JP", "Times New Roman", "IPAPGothic"),
+                )[#purpose]],
               //
               place(dx: -3.9pt)[#text()[実験と結果の概要]], //
               place(dx: -4.8pt)[
@@ -574,7 +576,9 @@
               ], //
               place(
                 dx: 3.78pt,
-              )[#text(font: ("Noto Serif CJK JP", "Times New Roman", "IPAPGothic"))[#purpose]],
+              )[#text(
+                  size: 10pt, font: ("Noto Serif CJK JP", "Times New Roman", "IPAPGothic"),
+                )[#purpose]],
             )
           ]
         ],
