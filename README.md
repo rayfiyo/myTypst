@@ -28,6 +28,8 @@
 
 - [修論用のTypstのテンプレート](https://github.com/yukukotani/typst-coins-thesis)
 - [日本語文書向け Typst テンプレート（大学生向け&自己流）](https://github.com/stepney141/my_typst_template)
+- [Typst で日本語論文を書くときのテンプレート](https://github.com/kimushun1101/typst-jp-conf-template)
+  - PDF: [https://kimushun1101.github.io/typst-jp-conf-template/typst-jp-conf.pdf](https://kimushun1101.github.io/typst-jp-conf-template/typst-jp-conf.pdf)
 
 ## article
 
