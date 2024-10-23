@@ -50,7 +50,8 @@ typst fonts
 
 ## フォントの追加方法
 
-このレポジトリにある typst ファイルは `Noto Serif CJK JP` や `Noto Sans CJK JP` を多様している（依存している）．<br>
+このレポジトリにある typst ファイルは
+`Noto Serif CJK JP` や `Noto Sans CJK JP` を多様している（依存している）．<br>
 これらを追加する例をあげてみる．
 
 ### 方法１: インストール
@@ -60,6 +61,9 @@ Arch Linux では次で可能
 ```
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji
 ```
+
+先ほどのコマンドで追加が確認できない場合（typst 0.12.0 (737895d7) など）では，
+[後述の環境変数に追加](#環境変数に追加)を行う．
 
 ### 方法２: ローカルで指定
 
@@ -73,6 +77,29 @@ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji
 ```
 typst fonts --font-path ./fonts/
 ```
+
+先ほどのコマンドで追加が確認できない場合（typst 0.12.0 (737895d7) など）では，
+[後述の環境変数に追加](#環境変数に追加)を行う．
+
+### 環境変数に追加
+
+`TYPST_FONT_PATHS` という環境変数にフォントがあるパスを追加する．
+.ttf があるフォルダを直接指定せず，親ディレクトリを指定しても良い（その分遅くなるが）．
+私は，`/usr/share/fonts/noto-cjk/` を指定している．
+
+例えば fish shell だと次を設定ファイルに**追記**する．
+
+```
+set -gx TYPST_FONT_PATHS /usr/share/fonts/noto-cjk/
+```
+
+bash であれば次を**実行**する．
+
+```
+export TYPST_FONT_PATHS=/usr/share/fonts/noto-cjk/
+```
+
+前述の通り，親ディレクトリの`/usr/share/fonts/` を指定しても正常に動作する（その分遅くなるが）．
 
 ### Windows環境
 
