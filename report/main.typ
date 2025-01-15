@@ -1,0 +1,50 @@
+#import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
+
+#let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, normal: 11pt, math: 12pt)
+#set text(font: ("Noto Serif CJK JP"), size: font_sizes.at("normal"))
+#set heading(numbering: "1.")
+#set math.equation(supplement: [式], numbering: "(1)")
+
+= チートシート
+
+== コードブロック
+
+#sourcecode(numbers-start: 1)[```c
+    #include <stdio.h>
+
+    int main() {
+        printf("Hello, World!\n");
+        return 0;
+    }
+```]
+
+== 数式 と 引用
+
+$ A = mat(1, 2;3, 4) $ <eq1>
+
+@eq1 を表示（引用）
+
+== 画像 と 引用
+
+#figure(image("appendix/images/ladder.svg", width: 10%), caption: [
+  A step in the molecular testing pipeline of our lab.
+]) <img1>
+
+@img1 を表示（引用）
+
+== 表 と 引用
+
+#figure(
+  table(
+    columns: (7em, auto), align: (left, left), inset: 10pt, // columns: 2, なども可
+    [名称], [値], //
+    [A], [2], //
+    [B], [6], //
+  ),
+) <tbl1>
+
+@tbl1 を表示（引用）
+
+== URL埋め込み
+
+#link("https://typst.app/docs")[公式ドキュメント]
