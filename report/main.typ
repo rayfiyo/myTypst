@@ -2,6 +2,7 @@
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, normal: 11pt, math: 12pt)
 #let code_fonts = ("UDEV Gothic 35NF")
+#let math_fonts = ("New Computer Modern Math")
 #let serif_fonts = ("New Computer Modern", "IPAexMincho", "Noto Serif CJK JP")
 #let sans_fonts = ("IPAexGothic", "Noto Sans CJK JP")
 #let spacing_size = 1.2em
@@ -18,7 +19,8 @@
 
 #show figure.where(kind: image): set figure(supplement: "図")
 #show figure.where(kind: table): set figure(supplement: "表")
-#show math.equation: set text(font_sizes.math)
+#show math.equation: set text(font: math_fonts, size: font_sizes.math)
+#show raw: set text(font: code_fonts, size: font_sizes.normal)
 #show heading: it => {
   par(text(size: 0pt, "")); v(- spacing_size / 2)
   text(font: sans_fonts, weight: "light")[#it]
@@ -54,12 +56,12 @@
 == コードブロック
 
 #sourcecode(numbers-start: 1)[```c
-    #include <stdio.h>
+#include <stdio.h>
 
-    int main() {
-        printf("Hello, World!\n");
-        return 0;
-    }
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
 ```]
 
 == 数式 と 引用
