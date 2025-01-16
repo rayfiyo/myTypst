@@ -1,7 +1,7 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, normal: 11pt, math: 12pt)
-#let spacing_size = 1.6em
+#let spacing_size = 1.2em
 
 #set heading(numbering: "1.")
 #set math.equation(supplement: [式], numbering: "(1)")
