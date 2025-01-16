@@ -4,6 +4,33 @@
 #set text(font: ("Noto Serif CJK JP"), size: font_sizes.at("normal"))
 #set heading(numbering: "1.")
 #set math.equation(supplement: [式], numbering: "(1)")
+#set page(
+  paper: "a4", margin: (bottom: 1.75cm, top: 2.5cm, left: 2cm, right: 2cm),
+)
+
+// 表紙
+
+#align(center + horizon)[
+  #set text(size: font_sizes.at("h1"))
+
+  #text([タイトル], size: 36pt)
+
+  #text([サブタイトル])
+
+  #v(60pt)
+
+  #text([著 者])
+
+  #text(size: 16pt)[
+    #datetime.today().year() 年
+    #datetime.today().month() 月
+    #datetime.today().day() 日
+  ]
+]
+
+#pagebreak()
+
+// 本文
 
 = チートシート
 
