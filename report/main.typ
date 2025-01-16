@@ -4,7 +4,7 @@
 #let spacing_size = 1.2em
 
 #set heading(numbering: "1.")
-#set math.equation(supplement: [式], numbering: "(1)")
+#set math.equation(supplement: "式", numbering: numbering.with("(1.1)"))
 #set text(font: ("Noto Serif CJK JP"), size: font_sizes.normal)
 #set par(
   first-line-indent: 1em, leading: 1em, spacing: spacing_size, justify: true,
