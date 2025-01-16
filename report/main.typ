@@ -14,9 +14,8 @@
 )
 
 #show heading: it => {
-  it
-  par(text(size: 0pt, ""))
-  v(- spacing_size / 2)
+  par(text(size: 0pt, "")); v(- spacing_size / 2); it
+  par(text(size: 0pt, "")); v(- spacing_size / 2)
 }
 
 // 表紙
