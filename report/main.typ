@@ -1,12 +1,14 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, normal: 11pt, math: 12pt)
-#set text(font: ("Noto Serif CJK JP"), size: font_sizes.at("normal"))
 #set heading(numbering: "1.")
 #set math.equation(supplement: [式], numbering: "(1)")
+#set par(first-line-indent: 1em, leading: 1em, spacing: 1.6em, justify: true)
 #set page(
   paper: "a4", margin: (bottom: 1.75cm, top: 2.5cm, left: 2cm, right: 2cm),
 )
+#set text(font: ("Noto Serif CJK JP"), size: font_sizes.at("normal"))
+#show heading: set block(spacing: 1.6em)
 
 // 表紙
 
