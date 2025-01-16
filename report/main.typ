@@ -1,6 +1,7 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, normal: 11pt, math: 12pt)
+#let code_fonts = ("UDEV Gothic 35NF")
 #let serif_fonts = ("New Computer Modern", "IPAexMincho", "Noto Serif CJK JP")
 #let sans_fonts = ("IPAexGothic", "Noto Sans CJK JP")
 #let spacing_size = 1.2em
@@ -15,6 +16,8 @@
   paper: "a4", margin: (bottom: 1.75cm, top: 2.5cm, left: 2cm, right: 2cm),
 )
 
+#show figure.where(kind: image): set figure(supplement: "図")
+#show figure.where(kind: table): set figure(supplement: "表")
 #show math.equation: set text(font_sizes.math)
 #show heading: it => {
   par(text(size: 0pt, "")); v(- spacing_size / 2)
