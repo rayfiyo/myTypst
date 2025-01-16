@@ -1,11 +1,13 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, normal: 11pt, math: 12pt)
+#let serif_fonts = ("New Computer Modern", "IPAexMincho", "Noto Serif CJK JP")
+#let sans_fonts = ("IPAexGothic", "Noto Sans CJK JP")
 #let spacing_size = 1.2em
 
 #set heading(numbering: "1.")
 #set math.equation(supplement: "式", numbering: numbering.with("(1.1)"))
-#set text(font: ("Noto Serif CJK JP"), size: font_sizes.normal)
+#set text(font: serif_fonts, size: font_sizes.normal)
 #set par(
   first-line-indent: 1em, leading: 1em, spacing: spacing_size, justify: true,
 )
@@ -15,7 +17,8 @@
 
 #show math.equation: set text(font_sizes.math)
 #show heading: it => {
-  par(text(size: 0pt, "")); v(- spacing_size / 2); it
+  par(text(size: 0pt, "")); v(- spacing_size / 2)
+  text(font: sans_fonts, weight: "light")[#it]
   par(text(size: 0pt, "")); v(- spacing_size / 2)
 }
 
