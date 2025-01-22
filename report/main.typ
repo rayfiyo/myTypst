@@ -1,20 +1,21 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
 
-#let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, normal: 11pt, math: 12pt)
+#let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, h4: 12pt, normal: 11pt, math: 12pt)
 #let code_fonts = ("UDEV Gothic 35NF")
 #let math_fonts = ("New Computer Modern Math")
 #let serif_fonts = ("New Computer Modern", "IPAexMincho", "Noto Serif CJK JP")
-#let sans_fonts = ("IPAexGothic", "Noto Sans CJK JP")
+#let sans_fonts = ("Noto Sans CJK JP", "IPAexGothic")
+#let leading_size = 1.0em
 #let spacing_size = 1.2em
 
 #set heading(numbering: "1.")
 #set math.equation(supplement: "式", numbering: numbering.with("(1.1)"))
 #set text(font: serif_fonts, size: font_sizes.normal)
 #set par(
-  first-line-indent: 1em, leading: 1em, spacing: spacing_size, justify: true,
+  first-line-indent: 1em, leading: leading_size, spacing: spacing_size, justify: true,
 )
 #set page(
-  paper: "a4", margin: (bottom: 1.75cm, top: 2.5cm, left: 2cm, right: 2cm),
+  paper: "a4", columns: 1, margin: (bottom: 1.75cm, top: 2.5cm, left: 2cm, right: 2cm),
 )
 
 #show figure.where(kind: image): set figure(supplement: "図")
