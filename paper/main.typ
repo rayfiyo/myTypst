@@ -8,6 +8,7 @@
 #let leading_size = 1.0em
 #let spacing_size = 1.2em
 
+#set heading(numbering: "1.")
 #set math.equation(supplement: "式", numbering: numbering.with("(1.1)"))
 #set text(font: serif_fonts, size: font_sizes.normal)
 #set par(
@@ -47,9 +48,7 @@
 
 // 概要
 
-#align(center)[
-  = Abstract
-]
+#align(center)[ = Abstract ]
 #table(stroke: none, columns: (1fr), inset: 10pt)[
   論文の概要を書けます，図形にしていることで一回り小さく表示されます．
 ]
