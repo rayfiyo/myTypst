@@ -9,20 +9,21 @@ module.exports = {
     "refactor",
     "setting",
     "style",
-    "ci",
+    "cicd",
     "perf",
     "add",
     "del",
   ],
   maxMessageLength: 64,
   minMessageLength: 1,
-  questions: ["type", "scope", "subject", "issues"],
+  // questions: ["type", "subject", "issues", "body"],
+  questions: ["type", "subject", "issues"],
   scopes: [],
   types: {
-    ci: {
-      description: "🎡CIに関する更新",
+    cicd: {
+      description: "🎡CI/CDに関する更新",
       emoji: "🎡",
-      value: "ci",
+      value: "cicd",
     },
     docs: {
       description: "📄ドキュメント更新",
@@ -66,19 +67,21 @@ module.exports = {
       value: "setting",
     },
     add: {
-      description: "➕️追加（❗️あんまり使うな❗️）",
+      description: "➕️新規の静的ファイル追加（機能面への影響がない）",
       emoji: "➕️",
       value: "add",
     },
     del: {
-      description: "🗑️削除（❗️あんまり使うな❗️）",
+      description:
+        "🗑️ファイルやリソース単体の削除（リファクタや機能修正でもない）",
       emoji: "🗑️",
       value: "del",
     },
   },
   messages: {
-    type: "どんなコミットですか？:",
-    subject: "変更点簡潔に！！:\n",
-    issues: "閉じる issue いくつ～？\n",
+    type: "どんなコミット？",
+    subject: "ひとことで変更点は？\n",
+    issues: "閉じる issue いくつ？\n",
+    // body: "詳細あれば～\n",
   },
 };
