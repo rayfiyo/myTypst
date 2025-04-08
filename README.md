@@ -1,4 +1,4 @@
-# myTypst
+# my-typst
 
 - typst で色々な書類を書くためのテンプレート
 - Template for writing any document with typst
