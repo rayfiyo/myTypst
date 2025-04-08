@@ -1,7 +1,9 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
+#import "@preview/showybox:2.0.4": showybox // 文字の枠
 #set text(font: "Noto Serif CJK JP")
 #set figure(supplement: [図])
 #set math.equation(supplement: [式], numbering: "(1)")
+#show <r>: set text(fill: red) // 赤色
 
 // = チートシート
 //
@@ -25,3 +27,5 @@
 // - 画像 と 引用
 //   #figure(image("images/hoge.png", width: 80%), caption: [ 分圧のグラフ ]) <img1>
 //   @img1 を表示（引用）
+// - *太い赤字*<r>
+// #showybox()[文字の枠]
