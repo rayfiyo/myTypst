@@ -4,7 +4,7 @@
 #let code_fonts = ("UDEV Gothic 35NF")
 #let math_fonts = ("New Computer Modern Math")
 #let serif_fonts = ("New Computer Modern", "IPAexMincho", "Noto Serif CJK JP")
-#let sans_fonts = ("Noto Sans CJK JP", "IPAexGothic")
+#let sans_fonts = ("IPAexGothic", "Noto Sans CJK JP")
 #let leading_size = 1.0em
 #let spacing_size = 1.2em
 
