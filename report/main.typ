@@ -3,8 +3,8 @@
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, h4: 12pt, normal: 11pt, math: 12pt)
 #let code_fonts = ("UDEV Gothic 35NF")
 #let math_fonts = ("New Computer Modern Math")
-#let serif_fonts = ("New Computer Modern", "IPAexMincho", "Noto Serif CJK JP")
-#let sans_fonts = ("IPAexGothic", "Noto Sans CJK JP")
+#let serif_fonts = ("New Computer Modern", "Noto Serif CJK JP", "IPAexMincho",)
+#let sans_fonts = ("Noto Sans CJK JP", "IPAexGothic")
 #let leading_size = 1.0em
 #let spacing_size = 1.2em
 
@@ -24,7 +24,7 @@
 #show raw: set text(font: code_fonts, size: font_sizes.normal)
 #show heading: it => {
   par(text(size: 0pt, "")); v(- spacing_size / 2)
-  text(font: sans_fonts, weight: "light")[#it]
+  text(font: sans_fonts, weight: "medium")[#it]
   par(text(size: 0pt, "")); v(- spacing_size / 2)
 }
 
