@@ -3,8 +3,8 @@
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, h4: 12pt, normal: 11pt, math: 12pt)
 #let code_fonts = ("UDEV Gothic 35NF")
 #let math_fonts = ("New Computer Modern Math")
-#let serif_fonts = ("New Computer Modern", "IPAexMincho", "Noto Serif CJK JP")
-#let sans_fonts = ("IPAexGothic", "Noto Sans CJK JP")
+#let serif_fonts = ("New Computer Modern", "Noto Serif CJK JP", "IPAexMincho",)
+#let sans_fonts = ("Noto Sans CJK JP", "IPAexGothic")
 #let leading_size = 1.0em
 #let spacing_size = 1.2em
 
@@ -24,7 +24,7 @@
 #show raw: set text(font: code_fonts, size: font_sizes.normal)
 #show heading: it => {
   par(text(size: 0pt, "")); v(- spacing_size / 2)
-  text(font: sans_fonts, weight: "light")[#it]
+  text(font: sans_fonts, weight: "medium")[#it]
   par(text(size: 0pt, "")); v(- spacing_size / 2)
 }
 
@@ -52,46 +52,41 @@
 
 // 本文
 
-= チートシート
+= 概要
 
-== コードブロック
+= 実験目的
 
-#sourcecode(numbers-start: 1)[```c
-#include <stdio.h>
+= 実験原理
 
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}
-```]
+= 実験方法と手順
 
-== 数式 と 引用
+= 使用器具
 
-$ A = mat(1, 2;3, 4) $ <eq1>
+= 実験結果
 
-@eq1 を表示（引用）
+= 考察
 
-== 画像 と 引用
-
-#figure(image("appendix/images/ladder.svg", width: 10%), caption: [
-  A step in the molecular testing pipeline of our lab.
-]) <img1>
-
-@img1 を表示（引用）
-
-== 表 と 引用
-
-#figure(
-  table(
-    columns: (7em, auto), align: (left, left), inset: 10pt, // columns: 2, なども可
-    [名称], [値], //
-    [A], [2], //
-    [B], [6], //
-  ),
-) <tbl1>
-
-@tbl1 を表示（引用）
-
-== URL埋め込み
-
-#link("https://typst.app/docs")[公式ドキュメント]
+// チートシート: https://github.com/rayfiyo/my-typst/blob/main/note/main.typ
+// = チートシート
+//
+// - コードブロック
+//   #sourcecode(numbers-start: 1)[```c #include <stdio.h> ```]
+// - 数式 と 引用
+//   $ A = mat(1, 2;3, 4) $ <eq1>
+//   @eq1 を表示（引用）
+// - 表 と 引用
+//   #figure(
+//     table(
+//       columns: (7em, auto), align: (left, left), inset: 10pt, // columns: 2, なども可
+//       [名称], [値], //
+//       [A], [2], //
+//       [B], [6], //
+//     ),
+//   ) <tbl1>
+//   @tbl1 を表示（引用）
+// - URL埋め込み
+//   #link("https://typst.app/docs")[公式ドキュメント]
+// - 画像 と 引用
+//   #figure(image("images/hoge.png", width: 80%), caption: [ 分圧のグラフ ]) <img1>
+//   @img1 を表示（引用）
+// - *太い赤字*<r>
