@@ -1,0 +1,31 @@
+# File Format: https://github.com/typst/hayagriva/blob/main/docs/file-format.md#entry-type
+# type: エントリタイプ
+#   article: 記事。何らかの大きな出版物内に掲載されるもの
+#   report: 特定の目的や読者に向けて作成された、組織に所属する著者による文書
+#   thesis: 論文。高等教育機関における学位取得のために提出された学術的な作品
+#   web: ブログ記事を除いた、インターネット上で発見でき、その媒体特有の形式のコンテンツ
+#   book: 製本された形で出版された長文形式の作品
+#   blog: Webサイト上に自己発信的に公開された記事群
+#   repository: ソースコード、論文、その他のデータとその変更履歴を公開保存する場所
+#   misc: 他のいずれのエントリータイプにも該当しない項目
+# title: アイテムのタイトル
+# author: アイテムの著者
+# date: アイテムが公開された日付
+# parent: 親属性。アンソロジーなど用
+# publisher: アイテムの出版社
+# organization: アイテムが生産された組織
+# volume: 巻(volumes)、部(parts)、期(seasons) など用
+# edition: アイテムの公開バージョン。第ｎ版
+# page-range: ページの範囲
+# page-total: 総ページ数
+# url: URLとして value フィールド、アクセス日時として date フィールドを持つ
+# serial-number: doi, isbn issn, pmid, pmcid, arxiv または固有のシリアル値として serial
+
+textbook:
+  type: Book
+  title: 数値計算法 第3版
+  author: ["三井田惇郎", "須田宇宙"]
+  # edition: 第3版
+  publisher: 森北出版
+  date: 2023-10
+  serial-number: { isbn: "978-4-627-80154-7" }

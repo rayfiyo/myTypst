@@ -66,6 +66,8 @@
 
 = 考察
 
+#bibliography("references.yml", title: "参考文献", style: "ieee")
+
 // チートシート: https://github.com/rayfiyo/my-typst/blob/main/note/main.typ
 // = チートシート
 //
