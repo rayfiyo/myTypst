@@ -3,22 +3,16 @@
 - typst で色々な書類を書くためのテンプレート
 - Template for writing any document with typst
 
-## mystyle_report
+## 特徴
 
-- 私の環境でのレポート用
+- [KZNS/cjk-unbreak](https://github.com/KZNS/cjk-unbreak) を利用することで、[typst/typst #792](https://github.com/typst/typst/issues/792) の、CJKにおける改行時の空白問題に対処
 
-## note
+## dir
 
-- ノート（メモ）用
-- 表紙がない
-
-## report
-
-- レポート用
-
-## test
-
-- 試験的に使うディレクトリ
+- mystyle\_report/: 私の環境でのレポート用
+- note/: ノート（メモ）用。表紙がない
+- report/: レポート用
+- test/: 試験的に使うディレクトリ
 
 ---
 
