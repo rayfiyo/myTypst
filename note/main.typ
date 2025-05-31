@@ -1,7 +1,7 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
 #import "@preview/showybox:2.0.4": showybox // 文字の枠
 #import "@preview/cjk-unbreak:0.1.0": remove-cjk-break-space
-#set text(font: "Noto Serif CJK JP")
+#set text(font: "Noto Serif CJK JP", size: 12pt)
 #set figure(supplement: [図])
 #set math.equation(supplement: [式], numbering: "(1)")
 #show: remove-cjk-break-space // from @preview/cjk-unbreak
