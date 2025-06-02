@@ -7,6 +7,7 @@
 #show: remove-cjk-break-space // from @preview/cjk-unbreak
 #show <b>: set text(fill: blue) // 青字
 
+// #bibliography("references.yml", title: "参考文献", style: "ieee")
 // = チートシート
 //
 // - コードブロック
