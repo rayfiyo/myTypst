@@ -1,5 +1,6 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
 #import "@preview/cjk-unbreak:0.1.0": remove-cjk-break-space
+#import "cover.typ": cover
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, h4: 12pt, normal: 11pt, math: 12pt)
 #let code_fonts = ("UDEV Gothic 35NF")
@@ -32,25 +33,7 @@
 
 // 表紙
 
-#align(center + horizon)[
-  #set text(size: font_sizes.at("h1"))
-
-  #text([タイトル], size: 36pt)
-
-  #text([サブタイトル])
-
-  #v(60pt)
-
-  #text([著 者])
-
-  #text(size: 16pt)[
-    #datetime.today().year() 年
-    #datetime.today().month() 月
-    #datetime.today().day() 日
-  ]
-]
-
-#pagebreak()
+#cover("ドキュメントのタイトル", 10, "2025年2月18日")
 
 // 本文
 
