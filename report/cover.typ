@@ -1,4 +1,12 @@
-#let cover(title, exp_no, exp_date) = {
+#let cover(
+  exp_no: "", title: "", sub_title: "", //
+  author_id: "", author_name: "", exp_date: "", //
+  edit_date: (text()[
+    #datetime.today().year() 年 //
+    #datetime.today().month() 月 //
+    #datetime.today().day() 日 //
+  ]),
+) = {
   align(center + horizon)[
     #set text(size: 18pt)
 
@@ -6,7 +14,7 @@
 
     #text(title, size: 36pt)
 
-    #text([サブタイトル])
+    #text(sub_title)
 
     #v(60pt)
 
@@ -14,10 +22,7 @@
 
     #text(size: 16pt, [実験日: #exp_date])
 
-    #text(size: 16pt, [作成日:
-      #datetime.today().year() 年
-      #datetime.today().month() 月
-      #datetime.today().day() 日])
+    #text(size: 16pt, [作成日: #edit_date])
   ]
 
   pagebreak()
