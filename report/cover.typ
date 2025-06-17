@@ -12,7 +12,7 @@
 
     #text([実験番号: #exp_no])
 
-    #text(title, size: 36pt)
+    #text(size: 36pt, title)
 
     #text(sub_title)
 
