@@ -7,8 +7,8 @@
     #datetime.today().day() 日 //
   ]),
 ) = {
+  set text(size: 18pt)
   align(center + horizon)[
-    #set text(size: 18pt)
 
     #text([実験番号: #exp_no])
 
