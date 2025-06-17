@@ -1,4 +1,5 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
+#import "@preview/elsearticle:0.4.2": * // Elseforticle.cls 模倣 maucejo/elsearticle
 #import "@preview/cjk-unbreak:0.1.0": remove-cjk-break-space
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, h4: 12pt, normal: 11pt, math: 12pt)
