@@ -1,4 +1,5 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
+#import "@preview/cjk-unbreak:0.1.0": remove-cjk-break-space
 
 #let font_sizes = (h1: 18pt, h2: 16pt, h3: 14pt, h4: 12pt, normal: 11pt, math: 12pt)
 #let code_fonts = ("UDEV Gothic 35NF")
@@ -27,6 +28,7 @@
   text(font: serif_fonts, weight: "light")[#it]
   par(text(size: 0pt, "")); v(- spacing_size / 2)
 }
+#show: remove-cjk-break-space // from @preview/cjk-unbreak
 
 // ヘッダ
 
