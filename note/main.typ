@@ -1,5 +1,5 @@
 #import "@preview/codelst:2.0.2": sourcecode, sourcefile, lineref, code-frame
-#import "@preview/showybox:2.0.4": showybox // 文字の枠
+#import "@preview/elsearticle:0.4.2": * // めちゃリッチな枠とか maucejo/elsearticle
 #import "@preview/cjk-unbreak:0.1.0": remove-cjk-break-space
 #set text(font: "Noto Serif CJK JP", size: 12pt)
 #set figure(supplement: [図])
